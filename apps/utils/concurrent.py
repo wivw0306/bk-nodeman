@@ -125,7 +125,7 @@ def batch_call_coroutine(
     """
 
     async def _batch_call_coroutine(_coros: List[Coroutine]):
-        return await asyncio.gather(*_coros, return_exceptions=True)
+        return await asyncio.gather(*_coros, return_exceptions=False)
 
     coros: List[Coroutine] = [func(**params) for params in params_list]
     loop = asyncio.new_event_loop()
